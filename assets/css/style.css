@@ -196,10 +196,16 @@ p {
 }
 
 .footer-title {
+    display: inline-block;
     margin-bottom: 12px;
     font-family: Georgia, serif;
     font-size: 1.35rem;
     font-weight: 700;
+    text-decoration: none;
+}
+
+.site-footer a:focus-visible {
+    outline-color: #F7F2E9;
 }
 
 .site-footer p {
@@ -585,14 +591,27 @@ p {
     .equipment-page,
     .recipe-page,
     .footer-inner {
-        width: min(100% - 28px, 1120px);
+        width: min(100% - 32px, 1120px);
     }
 
     .site-nav {
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, max-content);
-        gap: 12px 24px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 0.9rem;
+    }
+
+    .site-nav a {
+        min-width: 0;
+        font-size: 0;
+        white-space: nowrap;
+    }
+
+    .site-nav a::after {
+        content: attr(data-mobile);
+        font-size: 0.9rem;
     }
 
     .hero h1 {
