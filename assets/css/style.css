@@ -24,9 +24,27 @@ a:focus-visible {
     outline-offset: 4px;
 }
 
+.skip-link {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+    max-width: calc(100% - 32px);
+    padding: 12px 20px;
+    background: #F7F2E9;
+    color: #3D2B22;
+    font-weight: 700;
+    transform: translateY(calc(-100% - 24px));
+}
+
+.skip-link:focus-visible {
+    transform: translateY(0);
+}
+
 h1,
 h2,
-h3 {
+h3,
+.step-definition-title {
     margin: 0;
     font-family: Georgia, serif;
     line-height: normal;
@@ -135,6 +153,7 @@ p {
 
 .hero-image {
     width: 100%;
+    height: auto;
     aspect-ratio: 3 / 2;
     border-radius: 10px;
     object-fit: cover;
@@ -156,6 +175,7 @@ p {
 }
 
 .card {
+    min-width: 0;
     display: flex;
     min-height: 170px;
     flex-direction: column;
@@ -176,6 +196,8 @@ p {
 }
 
 .card a {
+    max-width: 100%;
+    overflow-wrap: break-word;
     margin-top: auto;
     padding-top: 28px;
     font-weight: 700;
@@ -251,6 +273,8 @@ p {
 }
 
 .step-card {
+    min-width: 0;
+    overflow-wrap: break-word;
     position: relative;
     min-height: 198px;
     padding: 34px 88px 34px 32px;
@@ -258,7 +282,8 @@ p {
     background: #E8D5B7;
 }
 
-.step-card h3 {
+.step-card h3,
+.step-card .step-definition-title {
     font-size: 24px;
 }
 
@@ -480,6 +505,7 @@ p {
 
 .recipe-step-card img {
     width: 100%;
+    height: auto;
     aspect-ratio: 4 / 3;
     border-radius: 8px;
     object-fit: cover;
@@ -541,6 +567,7 @@ p {
 
     .guide-intro h1 {
         font-size: 2.5rem;
+        overflow-wrap: break-word;
     }
 
     .equipment-intro h1 {
@@ -657,7 +684,8 @@ p {
     .guide-steps h2,
     .guide-cta h2,
     .equipment-section h2,
-    .ingredients-section h2 {
+    .ingredients-section h2,
+    .recipe-next h2 {
         overflow-wrap: break-word;
     }
 
